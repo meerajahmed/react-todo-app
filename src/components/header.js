@@ -1,16 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class TodoApp extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <AddTodo />
-        <TodoList />
-        <Footer />
-      </div>
-    );
-  }
-}
+const Header = (props) => (
+  <header>
+    <h1>{props.title}</h1>
+  </header>
+);
 
-export default TodoApp;
+export default Header;
