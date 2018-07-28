@@ -4,10 +4,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = () => {
   return {
     "mode": "development",
-    "entry": "src/index.js",
+    "entry": "./src/index.js",
     "output": {
       "path": path.join(__dirname, '/dist'),
       "filename": "[name].[chunkhash:8].js"
+    },
+    devServer: {
+      contentBase: path.join(__dirname, "dist")
     },
     "devtool": "source-map",
     "module": {
