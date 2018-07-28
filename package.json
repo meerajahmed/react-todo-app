@@ -1,0 +1,42 @@
+{
+  "name": "react-todo-app",
+  "version": "1.0.0",
+  "description": "react todo app",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meerajahmed/react-todo-app.git"
+  },
+  "keywords": [
+    "react",
+    "todo"
+  ],
+  "author": "Meeraj Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meerajahmed/react-todo-app/issues"
+  },
+  "homepage": "https://github.com/meerajahmed/react-todo-app#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "sass-loader": "^7.0.3",
+    "webpack": "^4.16.3"
+  }
+}
