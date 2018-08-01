@@ -16,22 +16,21 @@ class AddTodo extends Component {
         completed: false
       };
       this.props.handleAdd(todo);
-      this.setState(() => ({ input: ''}));
+      this.setState(() => ({input: ''}));
     }
   };
 
-  handleInput = (event) => {
-    const input = event.target.value;
-    this.setState(() => ({ input }));
+  handleInputRef = (input) => {
+    this.setState(() => ({input}));
   };
 
   render() {
     return (
-      <form onSubmit={this.handleAdd} >
+      <form onSubmit={this.handleAdd}>
         <input type="text" name="todo"
                placeholder="What needs to be done?"
-               onChange={this.handleInput}
-               value={this.state.input} />
+               onChange={(event) => this.handleInputRef(event.target.value)}
+               value={this.state.input}/>
         <button type="submit">Add Todo</button>
       </form>
     );
