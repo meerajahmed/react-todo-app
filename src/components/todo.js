@@ -1,12 +1,32 @@
-import React from "react";
+import React, {Component} from "react";
 
-const Todo = (props) => (
-  <div>
-    <input type="checkbox" checked={props.todo.completed}
-           onClick={(e) => props.handleToggle(props.todo)} />
-    <span>{props.todo.title}</span>
-    <button onClick={(e) => props.handleDelete(props.todo)}> remove </button>
-  </div>
-);
+export default class Todo extends Component {
 
-export default Todo;
+  constructor(props) {
+    super(props);
+    this.state = {
+      completed: props.todo.completed
+    };
+  }
+
+  handleToggle = (completed) => {
+    const todo = {
+      ...this.props.todo,
+      completed
+    };
+    this.props.handleToggle(todo);
+    this.setState(() => ({completed}));
+  };
+
+  render() {
+    return (
+      <div>
+        <input type="checkbox" checked={this.state.completed}
+               onClick={(event) => this.handleToggle(event.target.checked)}/>
+        <span>{this.props.todo.title}</span>
+        <button onClick={() => this.props.handleDelete(this.props.todo)}> remove</button>
+      </div>
+    );
+  }
+
+}
